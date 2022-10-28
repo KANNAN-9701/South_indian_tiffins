@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.body{
+    background:url("./images/con-bg.gif");
+    background-size:107%;
+    color: black;
+    font-family: tahoma;
+}
+.wrap{
+    width: 530px;
+    margin:auto;
+    height: 87vh;
+    overflow: hidden;
+}
+.wrap h1{
+    text-align: center;
+    font-family: cursive;
+    color: white;
+    text-shadow: 2px 2px 5px orange;
+    padding: 20px;
+    animation: lig 4s infinite;
+}
+@keyframes lig{
+    0%{filter: hue-rotate(0deg);
+    scale: 0.1;}
+    80%{
+        filter: hue-rotate(360deg);
+        scale: 1.1; }
+    100%{
+        filter: hue-rotate(360deg);
+        scale: 1.5;}
+}
+.form-wrap{
+    overflow: hidden;
+    height: 447px;
+    position: relative;
+    top: 0px;
+    transition: all 1s ease-in-out .3s;
+}
+.form-wrap::before{
+    content: "";
+    position: absolute;
+    bottom: 128px;
+    left: 0px;
+    background-image: url(./images/before.png);
+    width: 530px;
+    height: 317px;
+}
+.form-wrap::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(./images/after.png);
+    width: 530px;
+    height: 259px;
+}
+.form-wrap.hide::before,
+.form-wrap.hide::after{
+    display: none;
+}
+.form-wrap:hover{
+    height: 777px;
+    top:-200px;
+}
+.form-wrap form{
+    background: white;
+    position: relative;
+    top: 200px;
+    overflow: hidden;
+    height: 200px;
+    width: 400px;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1p solid white;
+    border-right: 3px;
+    transition: all 1s ease-in-out .3s;
+    border-radius: 10px;
+}
+.form-wrap:hover form{
+    height: 530px;
+}
+form label{
+    margin: 11px 20px 0 0;
+    font-size: 15px;
+    color:tomato;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family:sans-serif;
+}
+.form-wrap form input[type=text],.form-wrap form input[type=email],.form-wrap form textarea{
+    font: 18px  uppercase,sans-serif;
+    color:black;
+    background:white;
+    width: 360px;
+    height: 37px;
+    padding: 0px 10px;
+    margin: 8px 0px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.form-wrap form textarea{
+    height: 80px;
+    padding-top:14px;
+}
+.form-wrap form textarea:focus,.form-wrap form input[type=text]:focus,.form-wrap form input[type=email]:focus{
+    background: lightgray;
+}
+.form-wrap form input[type=submit]{
+    position: relative;
+    font-family: tahoma;
+    font-size: 24px;
+    color: green;
+    width: 50%;
+    text-align: center;
+    margin:10px 85px;
+    padding: 5px;
+    background: lightgreen;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid green;
+    transition: opacity 0.7s ease-in-out 0s;
+}
+.form-wrap input[type=submit]:hover{
+    color: blue;
+    background-color: lightblue;
+    border: 2px solid blue;
+}
+.form-wrap:hover input[type=submit]{
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out 1.3s;
+}
+
+@media (max-width:768px) {
+    .body{
+        background-size: cover;
+    }
+}
